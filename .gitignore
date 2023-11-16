@@ -1,0 +1,26 @@
+# Virtual environment
+venv/
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Byte-compiled parts of the standard library
+*.pyc
+__pycache__/
+
+# Distribution directories
+dist/
+build/
+*.egg-info/
+
+# PyInstaller logs
+*.log
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Visual Studio Code settings
+.vscode/
