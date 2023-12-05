@@ -1,0 +1,10 @@
+$folder: rgb(97, 175, 239);
+$caution: rgb(246, 193, 119);
+$warning: rgb(235, 111, 146);
+
+.file { color: $text; }
+.folder { color: $folder; }
+.main-bg { background: $boost; }
+.caution-bg { background: $caution; }
+.warning-bg { background: $warning; }
+#file_line { layout: horizontal; }
