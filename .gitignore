@@ -1,5 +1,7 @@
 # Virtual environment
 venv/
+pyproject.toml
+.python-version
 
 # Compiled Python files
 __pycache__/
