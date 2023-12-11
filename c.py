@@ -1,4 +1,5 @@
 import pathlib
+
 # import os
 # from rich import Console
 from textual.app import App, ComposeResult
@@ -8,6 +9,7 @@ from textual.containers import ScrollableContainer
 
 class C(App):
     """A Textual app to display and manage files."""
+
     CSS_PATH = "styles.css"
     BINDINGS = [
         ("ctrl+c", "quit", "Quit"),
@@ -42,13 +44,12 @@ class FileManager:
 
     def get_files(self) -> None:
         """A method to get files in the current directory."""
-        sorted_cwd = sorted(pathlib.Path.cwd().iterdir(),
-                            key=lambda x: x.is_file())
+        sorted_cwd = sorted(pathlib.Path.cwd().iterdir(), key=lambda x: x.is_file())
 
         for index, item in enumerate(sorted_cwd):
             file_item = FileItem(f"{index+1} {item.name}")
             file_item.is_selected = False
-            file_item.idx = index+1
+            file_item.idx = index + 1
             file_item.path = item.absolute()
             file_item.itemname = item.name
 
