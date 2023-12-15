@@ -2,6 +2,7 @@ import os, contextlib
 from pathlib import Path
 from rich.console import Console
 from rich.theme import Theme
+import win32api
 
 
 theme_default = Theme(
@@ -44,14 +45,15 @@ def command(dirs):
     # If the input begins with a number, assume it's an index and change to that index's directory
     if command[0].isdigit() and int(command) in range(0, len(dirs)):
         try:
-        # If the index refers to a folder, change directories:
+            # If the index refers to a folder, change directories:
             if dirs[int(command)].is_dir():
                 os.chdir(dirs[int(command)])
-        
+
             if dirs[int(command)].is_file():
                 os.startfile(dirs[int(command)])
         except IndexError:
             pass
+
 
 def app():
     with contextlib.suppress(KeyboardInterrupt):
@@ -59,6 +61,7 @@ def app():
             dir_array = get_files()
             command(dir_array)
         return dir_array[0]
+
 
 # Executable Code
 if __name__ == "__main__":
