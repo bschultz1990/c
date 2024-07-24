@@ -2,7 +2,7 @@ import os, contextlib
 from pathlib import Path
 from rich.console import Console
 from rich.theme import Theme
-import win32api
+# import win32api
 
 
 theme_default = Theme(
