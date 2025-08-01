@@ -14,7 +14,7 @@ theme_default = Theme(
     }
 )
 
-console = Console(theme=theme_default)
+CONSOLE = Console(theme=theme_default)
 
 # CONSTANTS
 
@@ -22,8 +22,8 @@ console = Console(theme=theme_default)
 # Functions
 def get_files():
     """A method to get files in the current directory"""
-    console.clear()
-    console.print(Path.cwd(), style="folder")
+    CONSOLE.clear()
+    CONSOLE.print(Path.cwd(), style="folder")
 
     sorted_cwd = sorted(Path.cwd().iterdir(), key=lambda x: x.is_file())
     dir_array = []
@@ -33,9 +33,9 @@ def get_files():
     for i, item in enumerate(dir_array):
         print(i, end="  ")
         if item.is_dir():
-            console.print(item.name, style="folder")
+            CONSOLE.print(item.name, style="folder")
         else:
-            console.print(item.name)
+            CONSOLE.print(item.name)
     return dir_array
 
 
